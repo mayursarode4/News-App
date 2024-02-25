@@ -16,6 +16,8 @@ object Constants {
 
     const val TOP_HEADLINES_PAGING = "Top Headlines Pagination"
 
+    const val NEWS_SOURCES = "News Sources"
+
 
     // PAGING
     const val INITIAL_PAGE = 1

@@ -57,6 +57,16 @@ fun HomeScreen(
                 navController.navigate(route = Screen.TopHeadlinesPagination.route)
             })
 
+        Spacer(modifier = Modifier.height(16.dp))
+
+        CustomButton(
+            text = "NEWS SOURCES",
+            onClickAction = {
+                navController.navigate(route = Screen.NewsSources.route)
+            })
+
+
+
     }
 
 }

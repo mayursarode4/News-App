@@ -1,5 +1,6 @@
 package com.mayursarode.newsapp.data.api
 
+import com.mayursarode.newsapp.data.model.NewsSourcesResponse
 import com.mayursarode.newsapp.data.model.TopHeadlinesResponse
 import com.mayursarode.newsapp.utils.Constants.DEFAULT_COUNTRY
 import retrofit2.http.GET
@@ -17,5 +18,11 @@ interface NetworkService {
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int
     ): TopHeadlinesResponse
+
+    @GET("top-headlines/sources")
+    suspend fun getNewsSources(): NewsSourcesResponse
+
+    @GET("top-headlines")
+    suspend fun getNewsBySources(@Query("sources") sources: String): TopHeadlinesResponse
 
 }
