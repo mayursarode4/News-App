@@ -2,6 +2,7 @@ package com.mayursarode.newsapp.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -37,7 +38,15 @@ fun HomeScreen(
         CustomButton(
             text = "TOP HEADLINES ONLINE",
             onClickAction = {
-                navController.navigate(route = Screen.TopHeadlineOnline.route)
+                navController.navigate(route = Screen.TopHeadlinesOnline.route)
+            })
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        CustomButton(
+            text = "TOP HEADLINES OFFLINE",
+            onClickAction = {
+                navController.navigate(route = Screen.TopHeadlinesOffline.route)
             })
     }
 }

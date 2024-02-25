@@ -1,9 +1,14 @@
 package com.mayursarode.newsapp.di.module
 
 import android.content.Context
+import androidx.room.Room
 import com.mayursarode.newsapp.data.api.ApiKeyInterceptor
 import com.mayursarode.newsapp.data.api.NetworkService
+import com.mayursarode.newsapp.data.local.database.DatabaseService
+import com.mayursarode.newsapp.data.local.database.NewsDatabase
+import com.mayursarode.newsapp.data.local.database.NewsDatabaseService
 import com.mayursarode.newsapp.di.BaseUrl
+import com.mayursarode.newsapp.di.DatabaseName
 import com.mayursarode.newsapp.di.NetworkApiKey
 import com.mayursarode.newsapp.utils.Constants.API_KEY
 import com.mayursarode.newsapp.utils.Constants.BASE_URL
@@ -85,4 +90,28 @@ class ApplicationModule {
     fun provideStringHelper(@ApplicationContext context: Context): ResourceProvider {
         return DefaultResourceProvider(context)
     }
+
+    @DatabaseName
+    @Provides
+    fun provideDatabaseName(): String = "news-database"
+
+    @Provides
+    @Singleton
+    fun provideNewsDatabase(
+        @ApplicationContext context: Context,
+        @DatabaseName databaseName: String
+    ): NewsDatabase {
+        return Room.databaseBuilder(
+            context,
+            NewsDatabase::class.java,
+            databaseName
+        ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabaseService(newsDatabase: NewsDatabase): DatabaseService {
+        return NewsDatabaseService(newsDatabase)
+    }
+
 }

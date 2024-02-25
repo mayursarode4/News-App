@@ -10,5 +10,8 @@ object Constants {
     const val BASE_URL = "https://newsapi.org/v2/"
 
     // screen name
-    const val TOP_HEADLINES_ONLINE = "Top HeadLines Online"
+    const val TOP_HEADLINES_ONLINE = "Top Headlines Online"
+
+    const val TOP_HEADLINES_OFFLINE = "Top Headlines Offline"
+
 }

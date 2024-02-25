@@ -1,6 +1,7 @@
 package com.mayursarode.newsapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import com.mayursarode.newsapp.data.local.entity.Article
 
 data class ApiArticle(
 
@@ -15,3 +16,13 @@ data class ApiArticle(
     @SerializedName("source")
     val source: ApiSource
 )
+
+fun ApiArticle.toArticleEntity(): Article {
+    return Article(
+        title = title,
+        description = description,
+        url = url,
+        imageUrl = imageUrl,
+        source = source.toEntitySource()
+    )
+}
