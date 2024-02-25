@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">News-App</string>
+    <string name="top_headlines">Top Headlines</string>
+    <string name="no_internet_available">No internet available</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+
 </resources>

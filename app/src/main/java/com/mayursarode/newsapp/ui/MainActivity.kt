@@ -20,10 +20,12 @@ import androidx.navigation.compose.rememberNavController
 import com.mayursarode.newsapp.navigation.SetupNavGraph
 import com.mayursarode.newsapp.ui.theme.NewsAppTheme
 import com.mayursarode.newsapp.utils.Constants
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    lateinit var navController: NavHostController
+    private lateinit var navController: NavHostController
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +36,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         TopAppBar(
-                            colors = TopAppBarDefaults.smallTopAppBarColors(
+                            colors = TopAppBarDefaults.topAppBarColors(
                                 containerColor = MaterialTheme.colorScheme.primary,
                                 titleContentColor = Color.White
                             ), title = { Text(text = Constants.APP_NAME) })
