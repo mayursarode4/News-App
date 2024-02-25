@@ -2,6 +2,7 @@ package com.mayursarode.newsapp.di.module
 
 import android.content.Context
 import androidx.room.Room
+import androidx.work.WorkManager
 import com.mayursarode.newsapp.data.api.ApiKeyInterceptor
 import com.mayursarode.newsapp.data.api.NetworkService
 import com.mayursarode.newsapp.data.local.database.DatabaseService
@@ -112,6 +113,12 @@ class ApplicationModule {
     @Singleton
     fun provideDatabaseService(newsDatabase: NewsDatabase): DatabaseService {
         return NewsDatabaseService(newsDatabase)
+    }
+
+    @Provides
+    @Singleton
+    fun provideWorkManager(@ApplicationContext context: Context): WorkManager {
+        return WorkManager.getInstance(context)
     }
 
 }
