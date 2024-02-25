@@ -48,7 +48,17 @@ fun HomeScreen(
             onClickAction = {
                 navController.navigate(route = Screen.TopHeadlinesOffline.route)
             })
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        CustomButtonPgn(
+            text = "TOP HEADLINES\n\t\tPAGINATION",
+            onClickAction = {
+                navController.navigate(route = Screen.TopHeadlinesPagination.route)
+            })
+
     }
+
 }
 
 @Composable
@@ -58,6 +68,40 @@ fun CustomButton(
     modifier: Modifier = Modifier,
     buttonWidth: Dp = 350.dp,
     buttonHeight: Dp = 50.dp,
+    fontSize: TextUnit = 25.sp
+) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp),
+        shape = RoundedCornerShape(8.dp),
+        color = MaterialTheme.colorScheme.primary
+    ) {
+        Button(
+            onClick = { onClickAction.invoke() },
+            modifier = modifier
+                .width(buttonWidth)
+                .height(buttonHeight),
+            shape = RoundedCornerShape(8.dp)
+        ) {
+            Text(
+                style = TextStyle(fontSize = fontSize),
+                text = text,
+                minLines = 2
+            )
+
+        }
+    }
+}
+
+
+@Composable
+fun CustomButtonPgn(
+    text: String,
+    onClickAction: () -> Unit,
+    modifier: Modifier = Modifier,
+    buttonWidth: Dp = 350.dp,
+    buttonHeight: Dp = 80.dp,
     fontSize: TextUnit = 25.sp
 ) {
     Surface(

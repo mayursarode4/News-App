@@ -10,4 +10,12 @@ import javax.inject.Singleton
 interface NetworkService {
     @GET("top-headlines")
     suspend fun getTopHeadlines(@Query("country") country: String = DEFAULT_COUNTRY): TopHeadlinesResponse
+
+    @GET("top-headlines")
+    suspend fun getTopHeadlinesPaging(
+        @Query("country") country: String = DEFAULT_COUNTRY,
+        @Query("page") page: Int,
+        @Query("pageSize") pageSize: Int
+    ): TopHeadlinesResponse
+
 }

@@ -14,4 +14,11 @@ object Constants {
 
     const val TOP_HEADLINES_OFFLINE = "Top Headlines Offline"
 
+    const val TOP_HEADLINES_PAGING = "Top Headlines Pagination"
+
+
+    // PAGING
+    const val INITIAL_PAGE = 1
+    const val PAGE_SIZE = 10
+
 }

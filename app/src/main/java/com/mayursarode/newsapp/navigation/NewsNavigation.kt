@@ -9,6 +9,7 @@ import com.mayursarode.newsapp.ui.HomeScreen
 import com.mayursarode.newsapp.ui.base.openCustomChromeTab
 import com.mayursarode.newsapp.ui.topheadlines.offline.TopHeadlinesOfflineRoute
 import com.mayursarode.newsapp.ui.topheadlines.online.TopHeadlinesOnlineRoute
+import com.mayursarode.newsapp.ui.topheadlines.paging.TopHeadlinesPagingRoute
 
 @Composable
 fun SetupNavGraph(
@@ -39,6 +40,16 @@ fun SetupNavGraph(
             route = Screen.TopHeadlinesOffline.route
         ) {
             TopHeadlinesOfflineRoute(
+                navController = navController,
+                onNewsClick = {
+                    openCustomChromeTab(context, it)
+                })
+        }
+
+        composable(
+            route = Screen.TopHeadlinesPagination.route
+        ) {
+            TopHeadlinesPagingRoute(
                 navController = navController,
                 onNewsClick = {
                     openCustomChromeTab(context, it)
