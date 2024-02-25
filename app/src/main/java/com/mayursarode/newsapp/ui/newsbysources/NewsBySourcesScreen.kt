@@ -28,6 +28,8 @@ fun NewsBySourcesRoute(
             viewModel.fetchNewsBySources(sourceId)
         } else if (!countryCode.isNullOrEmpty()) {
             viewModel.fetchNewsByCountry(countryCode)
+        } else if (!languageId.isNullOrEmpty()) {
+            viewModel.fetchNewsByLanguage(languageId)
         }
 
     })

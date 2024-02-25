@@ -27,4 +27,12 @@ class NewsBySourcesRepository @Inject constructor(private val networkService: Ne
         }
     }
 
+    fun getNewsByLanguage(language: String): Flow<List<ApiArticle>> {
+        return flow {
+            emit(networkService.getNewsByLanguage(language))
+        }.map {
+            it.articles
+        }
+    }
+
 }

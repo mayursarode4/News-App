@@ -80,4 +80,25 @@ class NewsBySourcesViewModel @Inject constructor(
         }
     }
 
+    fun fetchNewsByLanguage(languageId: String?) {
+        viewModelScope.launch(dispatcherProvider.main) {
+            logger.d(TAG, "fetchNewsByLanguage: languageId: $languageId")
+            _uiState.value = UiState.Loading
+            languageId?.let { id ->
+                newsBySourcesRepository.getNewsByLanguage(id) // pass languageId
+                    .catch { e ->
+                        _uiState.value = UiState.Error(e.toString())
+                        logger.d(
+                            TAG,
+                            "fetchNewsByLanguage: error: ${e.message.toString()}"
+                        )
+                    }.collect {
+                        _uiState.value = UiState.Success(it)
+                        logger.d(TAG, it.toString())
+                    }
+            }
+
+        }
+    }
+
 }

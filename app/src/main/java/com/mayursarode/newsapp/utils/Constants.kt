@@ -20,6 +20,8 @@ object Constants {
 
     const val COUNTRIES_SOURCES = "Select a Country"
 
+    const val LANGUAGE_SOURCES = "Select a Language"
+
 
     // PAGING
     const val INITIAL_PAGE = 1

@@ -1,6 +1,7 @@
 package com.mayursarode.newsapp.utils
 
 import com.mayursarode.newsapp.data.model.Country
+import com.mayursarode.newsapp.data.model.Language
 
 val COUNTRIES = listOf(
     Country("ae", "United Arab Emirates"),
@@ -56,4 +57,21 @@ val COUNTRIES = listOf(
     Country("us", "United States of America"),
     Country("ve", "Venezuela"),
     Country("za", "South Africa")
+)
+
+val LANGUAGES = listOf(
+    Language("ar", "Arabic"),
+    Language("de", "German"),
+    Language("en", "English"),
+    Language("es", "Spanish"),
+    Language("fr", "French"),
+    Language("he", "Hebrew"),
+    Language("it", "Italian"),
+    Language("nl", "Dutch"),
+    Language("no", "Norwegian"),
+    Language("pt", "Portuguese"),
+    Language("ru", "Russian"),
+    Language("sv", "Swedish"),
+    Language("ud", "Turkish-German"),
+    Language("zh", "Chinese")
 )
