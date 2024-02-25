@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.mayursarode.newsapp.ui.HomeScreen
 import com.mayursarode.newsapp.ui.base.openCustomChromeTab
+import com.mayursarode.newsapp.ui.country.CountryListRoute
 import com.mayursarode.newsapp.ui.newsbysources.NewsBySourcesRoute
 import com.mayursarode.newsapp.ui.newssources.NewsSourcesRoute
 import com.mayursarode.newsapp.ui.topheadlines.offline.TopHeadlinesOfflineRoute
@@ -72,19 +73,28 @@ fun SetupNavGraph(
                 navArgument("sourceId") {
                     type = NavType.StringType
                     defaultValue = ""
+                },
+                navArgument("countryCode") {
+                    type = NavType.StringType
+                    defaultValue = ""
                 }
             )
         ) { it ->
 
             val sourceId = it.arguments?.getString("sourceId").toString()
+            val countryCode = it.arguments?.getString("countryCode").toString()
 
             NewsBySourcesRoute(
                 onNewsClick = {
                     openCustomChromeTab(context, it)
-                }, sourceId = sourceId
+                }, sourceId = sourceId, countryCode = countryCode
             )
         }
 
-
+        composable(
+            route = Screen.Countries.route
+        ) {
+            CountryListRoute(navController = navController)
+        }
     }
 }

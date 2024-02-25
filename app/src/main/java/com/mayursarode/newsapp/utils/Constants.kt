@@ -18,9 +18,12 @@ object Constants {
 
     const val NEWS_SOURCES = "News Sources"
 
+    const val COUNTRIES_SOURCES = "Select a Country"
+
 
     // PAGING
     const val INITIAL_PAGE = 1
     const val PAGE_SIZE = 10
+
 
 }

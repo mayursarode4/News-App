@@ -13,12 +13,16 @@ sealed class Screen(val route: String) {
     object NewsSources : Screen(route = "newssources")
 
     object NewsBySources :
-        Screen(route = "newsbysources?sourceId={sourceId}") {
+        Screen(route = "newsbysources?sourceId={sourceId}&countryCode={countryCode}") {
         fun passData(
-            sourceId: String = ""
+            sourceId: String = "",
+            countryCode: String = ""
         ): String {
-            return "newsbysources?sourceId=$sourceId"
+            return "newsbysources?sourceId=$sourceId&countryCode=$countryCode"
         }
     }
+
+    object Countries : Screen(route = "countries")
+
 
 }

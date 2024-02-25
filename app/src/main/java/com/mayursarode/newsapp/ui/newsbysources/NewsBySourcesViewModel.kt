@@ -61,4 +61,23 @@ class NewsBySourcesViewModel @Inject constructor(
         }
     }
 
+    fun fetchNewsByCountry(countryCode: String?) {
+        viewModelScope.launch(dispatcherProvider.main) {
+            logger.d(TAG, "fetchNewsByCountry: $countryCode")
+            _uiState.value = UiState.Loading
+            countryCode?.let { it ->
+                newsBySourcesRepository.getNewsByCountry(it) //pass countryCode
+                    .catch { e ->
+                        _uiState.value = UiState.Error(e.toString())
+                        logger.d(
+                            TAG,
+                            "fetchNewsByCountry: ${e.message.toString()}"
+                        )
+                    }.collect {
+                        _uiState.value = UiState.Success(it)
+                    }
+            }
+        }
+    }
+
 }

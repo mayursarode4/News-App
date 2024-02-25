@@ -65,7 +65,13 @@ fun HomeScreen(
                 navController.navigate(route = Screen.NewsSources.route)
             })
 
+        Spacer(modifier = Modifier.height(16.dp))
 
+        CustomButton(
+            text = "COUNTRIES",
+            onClickAction = {
+                navController.navigate(route = Screen.Countries.route)
+            })
 
     }
 

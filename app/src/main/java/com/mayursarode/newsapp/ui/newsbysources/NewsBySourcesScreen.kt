@@ -26,6 +26,8 @@ fun NewsBySourcesRoute(
     LaunchedEffect(Unit, block = {
         if (!sourceId.isNullOrEmpty()) {
             viewModel.fetchNewsBySources(sourceId)
+        } else if (!countryCode.isNullOrEmpty()) {
+            viewModel.fetchNewsByCountry(countryCode)
         }
 
     })
