@@ -27,6 +27,6 @@ sealed class Screen(val route: String) {
 
     object Languages : Screen(route = "languages")
 
-
+    object SearchNews : Screen(route = "searchnews")
 
 }

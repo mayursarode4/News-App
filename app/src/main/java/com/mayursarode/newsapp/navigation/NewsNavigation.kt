@@ -13,6 +13,7 @@ import com.mayursarode.newsapp.ui.country.CountryListRoute
 import com.mayursarode.newsapp.ui.language.LanguageListRoute
 import com.mayursarode.newsapp.ui.newsbysources.NewsBySourcesRoute
 import com.mayursarode.newsapp.ui.newssources.NewsSourcesRoute
+import com.mayursarode.newsapp.ui.search.SearchScreenRoute
 import com.mayursarode.newsapp.ui.topheadlines.offline.TopHeadlinesOfflineRoute
 import com.mayursarode.newsapp.ui.topheadlines.online.TopHeadlinesOnlineRoute
 import com.mayursarode.newsapp.ui.topheadlines.paging.TopHeadlinesPagingRoute
@@ -110,5 +111,14 @@ fun SetupNavGraph(
 
         }
 
+        composable(
+            route = Screen.SearchNews.route
+        ) {
+            SearchScreenRoute(
+                navController = navController,
+                onNewsClick = {
+                    openCustomChromeTab(context, it)
+                })
+        }
     }
 }
