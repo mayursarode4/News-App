@@ -1,6 +1,6 @@
 # News-App - MVVM architecture
 
-<p align="center"><img src="https://github.com/mayursarode4/News-App/blob/main/assets/News-app_mvvm.png?description=1&forks=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"></p>
+<p align="center"><img src="https://github.com/mayursarode4/News-App/blob/main/assets/News-app-mvvm.png?description=1&forks=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"></p>
 
 
 
