@@ -39,8 +39,8 @@ class TopHeadlinesOnlineViewModel @Inject constructor(
     }
 
     fun fetchNewsOnline() {
-        viewModelScope.launch {
-            if (!networkHelper.isNetworkConnected()) {
+        viewModelScope.launch(dispatcherProvider.main) {
+            if (networkHelper.isNetworkConnected()) {
                 val errorText = resourceProvider.getStringNoInternetAvailable()
                 _uiState.value = UiState.Error(errorText)
                 return@launch

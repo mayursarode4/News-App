@@ -99,12 +99,6 @@ class TopHeadlinesOnlineScreenTest {
             .assertExists()
     }
 
-    /*private fun stringResource(
-        @StringRes resId: Int,
-        context: local = InstrumentationRegistry.getInstrumentation().targetContext
-    ): String {
-        return context.getString(resId)
-    }*/
 }
 
 private val testArticles = listOf(
