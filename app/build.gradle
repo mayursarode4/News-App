@@ -35,7 +35,8 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "API_KEY", "\"2917274eb5ef4dd88513cafeb276a5db\"")
+            buildConfigField("String", "API_KEY", "\"<Add your API Key>\"")
+            //FIXME remove the string and add your api key
         }
 
         release {
