@@ -200,3 +200,12 @@ buildConfigField("String", "API_KEY", "\"<Add your API Key>\"")
 
 Feel free to improve or add features to the project.
 Create an issue or find the pending issue. All pull requests are welcome 😄
+
+## 🚀 About Me
+Hi there! My name is Mayur Sarode, I work as a Senior Android Developer and eager to expand knowledge.
+
+Lets connect, feel free to reach out to me on :
+
+- [LinkedIn](https://www.linkedin.com/in/mayur-sarode-a3336620/)
+- [GitHub](https://github.com/mayursarode4)
+
